@@ -5,7 +5,7 @@
 				<v-app-bar-nav-icon @click="drawer = !drawer" />
 				<v-app-bar-title>Apollo</v-app-bar-title>
 				<template #append>
-					<v-switch v-model="theme"/>
+					<v-switch v-model="theme" hide-details />
 					<v-btn icon="mdi-dots-vertical">
 						<v-menu activator="parent">
 							<v-list>
