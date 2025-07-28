@@ -14,8 +14,8 @@
 			</template>
 			<v-card-text>
 				<ClientOnly>
-					<v-data-table :search="search" :items="ships">
-						<template #item.active="{item}">
+					<v-data-table :headers="headers" hover :search="search" :items="ships">
+						<template #item.active="{ item }">
 							<v-chip :color="item.active ? 'green' : 'red'">{{ item.active }}</v-chip>
 						</template>
 					</v-data-table>
@@ -29,6 +29,11 @@
 </template>
 <script lang="ts" setup>
 const search = ref('')
+const headers = ref([
+	{ title: 'ID', key: 'id' },
+	{ title: 'Ship Name', key: 'name' },
+	{ title: 'Status', key: 'active' },
+])
 const query = gql`
 	query getShips {
 		ships {
