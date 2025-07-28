@@ -6,7 +6,8 @@
 				<v-app-bar-title>Apollo</v-app-bar-title>
 				<template #append>
 					<v-switch v-model="theme" hide-details />
-					<v-btn icon="mdi-dots-vertical">
+					<v-btn class="ml-4" icon>
+						<v-icon>mdi-dots-vertical</v-icon>
 						<v-menu activator="parent">
 							<v-list>
 								<v-list-item
